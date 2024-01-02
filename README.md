@@ -9,3 +9,6 @@ When running/testing code to set up local:
 
 To create new branch:
 git checkout -b new-branch-name
+
+Pushing PR for a new branch:
+git push -u origin new_branch_name
