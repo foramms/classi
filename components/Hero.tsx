@@ -38,7 +38,7 @@ const Hero = () => {
 
           <p className="bold-16 lg:bold-20 text-blue-70">
             5k
-            <span className="regular-16 lg:regular-20 ml-1"> Excellent Reviews</span>
+            <span className="regular-16 lg:regular-20 ml-1"> "Excellent"</span>
           </p>
         </div>
 
@@ -46,12 +46,13 @@ const Hero = () => {
           <Button
               type="button"
               title="Write a Review"
+              icon="/herowrite.svg"
               variant="btn_green"
           />
           <Button
               type="button"
               title="How it Works"
-              icon="/play.svg"
+              icon="/heroplay.svg"
               variant="btn_white_text"
           />
         </div>

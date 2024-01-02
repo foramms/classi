@@ -18,32 +18,32 @@ export const NAV_LINKS = [
   // FEATURES SECTION
   export const FEATURES = [
     {
-      title: 'Real maps can be offline',
-      icon: '/map.svg',
+      title: 'Search For Major Related Classes',
+      icon: '/search.svg',
       variant: 'green',
       description:
-        'We provide a solution for you to be able to use our application when climbing, yes offline maps you can use at any time there is no signal at the location',
+        'Stay on top of your educational plan by making sure you are taking the major related coursework',
     },
     {
-      title: 'Set an adventure schedule',
-      icon: '/calendar.svg',
+      title: 'Find Updated Syllabi from Previous Students',
+      icon: '/document.svg',
       variant: 'green',
       description:
-        "Schedule an adventure with friends. On holidays, there are many interesting offers from Hilink. That way, there's no more discussion",
+        "Get prepared with course text and material ahead of time, so you are ready to go when classes begin",
     },
     {
-      title: 'Technology using augment reality',
-      icon: '/tech.svg',
+      title: 'Read Reviews from Students',
+      icon: '/study.svg',
       variant: 'green',
       description:
-        'Technology uses augmented reality as a guide to your hiking trail in the forest to the top of the mountain. Already supported by the latest technology without an internet connection',
+        'Get to understand the workload of the class and any prior topics to reivew to best prepare yourself.',
     },
     {
-      title: 'Many new locations every month',
-      icon: '/location.svg',
+      title: 'Connect with Your Peers',
+      icon: '/locationblue.svg',
       variant: 'orange',
       description:
-        'Lots of new locations every month, because we have a worldwide community of climbers who share their best experiences with climbing',
+        'Build community amongst your peers, share resources such as tutoring hours and build study groups all in one area',
     },
   ];
   

@@ -6,20 +6,20 @@ const Guide = () => {
     <section className = "flexCenter flex-col">
       <div className= "padding-container max-container w-full pb-24">
         <Image src="/Icon-notepad.svg" alt="camp" width={50} height={50} />
-        <p className="regular-18 -mt-1 mb-3 text-green-50"> 
-          WE ARE HERE FOR YOU
+        <p className="regular-18 -mt-1 mb-3 text-blue-200"> 
+          Feel Connected and Prepared
         </p>
         <div className = "flex flex-wrap justify-between gap-5 lg:gap-10">
           <h2 className="bold-40 lg:bold-64 xl: max-w-[390px]">
-            Guide You to Easy Path
+            Build a Support System
           </h2>
-          <p className = "regular-16 text-gray-30 xl:max-w-[520px]"> With this control, find an easy and fast solution to all your class review needs. Make reviews, upload syllabi and review class content with ease.</p>
+          <p className = "regular-16 text-gray-30 xl:max-w-[520px]"> Find an easy and fast solution to all your class review needs. Make reviews, upload syllabi and review class content with ease.</p>
         </div>
       </div>
 
       <div className = "flexCenter max-container relative w-full">
         <Image
-          src="/boat.png"
+          src="/gradphoto.png"
           alt="boat"
           width={1440}
           height={580}
@@ -38,14 +38,14 @@ const Guide = () => {
             <div className='flex w-full flex-col'>
               <div className = "flexBetween w-full">
                 <p className = "regular-16 text-gray-20"> Destination</p>
-                <p className = "bold-16 text-green-50">48 min</p>
+                {/* <p className = "bold-16 text-green-50">48 min</p> */}
               </div>
-              <p className= "bold-20 mt-2"> Aguas Calientes</p>
+              <p className= "bold-20 mt-2"> Graduation</p>
             </div>
 
             <div className='flex w-full flex-col'>
               <p className = "regular-16 text-gray-20"> Start Track</p>
-              <h4 className= "bold-20 mt-2 whitespace-nowrap"> Los Angeles</h4>
+              <h4 className= "bold-20 mt-2 whitespace-nowrap"> Today</h4>
             </div>
             </div>
           </div>
