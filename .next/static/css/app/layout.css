@@ -697,10 +697,6 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(162 162 162 / var(--tw-bg-opacity));
 }
-.bg-green-50{
-  --tw-bg-opacity: 1;
-  background-color: rgb(48 175 91 / var(--tw-bg-opacity));
-}
 .bg-green-90{
   --tw-bg-opacity: 1;
   background-color: rgb(41 44 39 / var(--tw-bg-opacity));
@@ -793,6 +789,10 @@ video {
 .capitalize{
   text-transform: capitalize;
 }
+.text-black{
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
 .text-blue-200{
   --tw-text-opacity: 1;
   color: rgb(191 219 254 / var(--tw-text-opacity));
@@ -816,10 +816,6 @@ video {
 .text-white{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-.text-black{
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 .transition-all{
   transition-property: all;
