@@ -554,6 +554,18 @@ video {
 .mt-6{
   margin-top: 1.5rem;
 }
+.mb-6{
+  margin-bottom: 1.5rem;
+}
+.mb-2{
+  margin-bottom: 0.5rem;
+}
+.mt-0{
+  margin-top: 0px;
+}
+.mt-0\.5{
+  margin-top: 0.125rem;
+}
 .block{
   display: block;
 }
@@ -577,6 +589,13 @@ video {
 }
 .h-full{
   height: 100%;
+}
+.h-\[100vh\]{
+  height: 100vh;
+}
+.h-fit{
+  height: -moz-fit-content;
+  height: fit-content;
 }
 .w-10{
   width: 2.5rem;
@@ -682,8 +701,17 @@ video {
 .rounded-full{
   border-radius: 9999px;
 }
+.rounded-xl{
+  border-radius: 0.75rem;
+}
+.rounded{
+  border-radius: 0.25rem;
+}
 .border{
   border-width: 1px;
+}
+.border-\[\#66666690\]{
+  border-color: #66666690;
 }
 .bg-blue-200{
   --tw-bg-opacity: 1;
@@ -697,10 +725,6 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(162 162 162 / var(--tw-bg-opacity));
 }
-.bg-green-50{
-  --tw-bg-opacity: 1;
-  background-color: rgb(48 175 91 / var(--tw-bg-opacity));
-}
 .bg-green-90{
   --tw-bg-opacity: 1;
   background-color: rgb(41 44 39 / var(--tw-bg-opacity));
@@ -712,11 +736,15 @@ video {
 .bg-white\/80{
   background-color: rgb(255 255 255 / 0.8);
 }
+.bg-sky-500{
+  --tw-bg-opacity: 1;
+  background-color: rgb(14 165 233 / var(--tw-bg-opacity));
+}
 .bg-bg-img-1{
-  background-image: url('/classreview.png');
+  background-image: url('/img-1.png');
 }
 .bg-bg-img-2{
-  background-image: url('/studygroup.png');
+  background-image: url('/img-2.png');
 }
 .bg-cover{
   background-size: cover;
@@ -740,6 +768,9 @@ video {
 }
 .p-8{
   padding: 2rem;
+}
+.p-10{
+  padding: 2.5rem;
 }
 .px-6{
   padding-left: 1.5rem;
@@ -769,6 +800,14 @@ video {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
+.px-4{
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.py-3{
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
 .pb-1{
   padding-bottom: 0.25rem;
 }
@@ -790,8 +829,27 @@ video {
 .text-center{
   text-align: center;
 }
+.text-base{
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+.text-sm{
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.text-xs{
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+.font-semibold{
+  font-weight: 600;
+}
 .capitalize{
   text-transform: capitalize;
+}
+.text-black{
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 .text-blue-200{
   --tw-text-opacity: 1;
@@ -817,9 +875,17 @@ video {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
-.text-black{
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
+.text-\[\#f64949fe\]{
+  color: #f64949fe;
+}
+.shadow-xl{
+  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.outline-none{
+  outline: 2px solid transparent;
+  outline-offset: 2px;
 }
 .transition-all{
   transition-property: all;
@@ -938,7 +1004,7 @@ video {
   top: 0px;
   height: 100vh;
   width: 100vw;
-  background-image: url('/herobg.png');
+  background-image: url('/pattern-bg.png');
   background-size: cover;
   background-position: center;
 }
@@ -1030,6 +1096,14 @@ body {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+.placeholder\:text-\[\#666\]::-moz-placeholder{
+  --tw-text-opacity: 1;
+  color: rgb(102 102 102 / var(--tw-text-opacity));
+}
+.placeholder\:text-\[\#666\]::placeholder{
+  --tw-text-opacity: 1;
+  color: rgb(102 102 102 / var(--tw-text-opacity));
+}
 .hover\:font-bold:hover{
   font-weight: 700;
 }
@@ -1043,6 +1117,10 @@ body {
 
   .md\:left-\[5\%\]{
     left: 5%;
+  }
+
+  .md\:w-2\/3{
+    width: 66.666667%;
   }
 
   .md\:flex-1{
@@ -1105,6 +1183,10 @@ body {
     height: 400px;
   }
 
+  .lg\:h-full{
+    height: 100%;
+  }
+
   .lg\:min-h-\[900px\]{
     min-height: 900px;
   }
@@ -1159,6 +1241,11 @@ body {
   .lg\:py-20{
     padding-top: 5rem;
     padding-bottom: 5rem;
+  }
+
+  .lg\:py-0{
+    padding-top: 0px;
+    padding-bottom: 0px;
   }
 
   .lg\:flexCenter{
@@ -1234,8 +1321,17 @@ body {
 }
 @media (min-width: 1536px){
 
+  .\32xl\:h-5\/6{
+    height: 83.333333%;
+  }
+
   .\32xl\:rounded-5xl{
     border-radius: 40px;
+  }
+
+  .\32xl\:px-20{
+    padding-left: 5rem;
+    padding-right: 5rem;
   }
   
   .\32xl\:max-container{
