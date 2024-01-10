@@ -19,9 +19,12 @@ const Login = () => {
                             placeholder='email@ucdavis.edu'
                             label='Email Address'
                             type='email'
-                        // register={register("email", {
-                        //     required: "Email Address is required"
-                        // })}
+                            // register={register("email", {
+                            //     required: "Email Address is required"
+                            // })}
+                            styles='w-full rounded-full'
+                            labelStyle='ml-2'
+                        //error = {errors.email ? errors.email.messag: ""}
                         />
                     </form>
                 </div>
