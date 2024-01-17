@@ -1,19 +1,19 @@
 import React from "react";
 
 const TextInput = React.forwardRef(({
-    propTypes, placeholder, styles, label, labelStyles, register, name, error
+    type, placeholder, styles, label, labelStyles, register, name, error
 }, ref
 ) => {
     return <div className="w-full flex flex-col mt-2">
         {
-            label && (
-                <p className={`text-ascent-2 text-sm mb-2 ${labelStyles}`}>{label}</p>
-            )}
+            label &&
+            <p className={`text-ascent-2 text-sm mb-2 ${labelStyles}`}>{label}</p>
+        }
 
         <div>
 
             <input
-                //type={type}
+                type={type}
                 name={name}
                 placeholder={placeholder}
                 ref={ref}
