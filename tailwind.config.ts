@@ -24,18 +24,19 @@ module.exports = {
         },
         blue: {
           70: '#021639',
+          90: '#6984A8'
         },
         yellow: {
           50: '#FEC601',
         },
       },
       backgroundImage: {
-        'bg-img-1': "url('/img-1.png')",
-        'bg-img-2': "url('/img-2.png')",
+        'bg-img-1': "url('/classreview.png')",
+        'bg-img-2': "url('/studygroup.png')",
         'feature-bg': "url('/feature-bg.png')",
         // 'notepad': "url('/review-like-message-svgrepo-com.png')",
         pattern: "url('/pattern.png')",
-        'pattern-2': "url('/pattern-bg.png')",
+        'pattern-2': "url('/herobg.png')",
       },
       screens: {
         xs: '400px',

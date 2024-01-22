@@ -4,7 +4,7 @@ interface CampProps{
   backgroundImage: string;
   title: string;
   subtitle: string;
-  peopleJoined: string;
+  peopleJoined?: string;
 }
 
 
@@ -57,7 +57,6 @@ const Camp = () => {
         backgroundImage="bg-bg-img-1"
         title = "Write Your Own Reviews"
         subtitle = "Create an Account to Stay Up to Date"
-        peopleJoined = "50+ Students Joined"
         />
         <CampSite
         backgroundImage="bg-bg-img-2"
