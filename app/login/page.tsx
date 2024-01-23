@@ -1,6 +1,8 @@
 'use client'
+import React, { useState } from 'react'
 import { register } from "module";
 import { BrowserRouter, Link } from "react-router-dom"
+import { useDispatch } from "react-redux";
 import { useForm } from "react-hook-form"
 import TextInput from "@/components/TextInput"
 
@@ -15,6 +17,10 @@ const Login = () => {
             mode: "onChange",
         }
     )
+
+    const [errMsg, setErrMsg] = useState("");
+    const [isSubmitting, setIsSubmitting] = useState("false");
+    //const dispatch = useDispatch()
     return (
         <BrowserRouter>
             <div className='bg-bgcolor w-full h-[100vh] flex items-center justify-center p-6'>
@@ -53,15 +59,35 @@ const Login = () => {
                                 error={errors.password ? errors.password?.message : ""}
                             />
 
-                            {<Link
+                            <Link
                                 to="/reset-password"
                                 className="text-sm text-right text-blue font-semibold">
-                                Forgot Password? </Link>}
+                                Forgot Password? </Link>
+
+                            {
+                                errMsg?.message && (
+                                    <span
+                                        className={`text-sm ${errMsg?.status == "failed"
+                                            ? "text-[#f64949fe]"
+                                            : "text-[#2ba150fe]"
+                                            } mt-0.5`}>
+                                        {errMsg?.message}
+                                    </span>
+                                )
+                            }
+
+
+
+
+
                         </form>
+                    </div>
+                    <div>
+
                     </div>
                 </div>
             </div >
-        </BrowserRouter>
+        </BrowserRouter >
     );
 
 };
