@@ -55,7 +55,7 @@ export const FOOTER_LINKS = [
   {
     title: 'Learn More',
     links: [
-      'About Hilink',
+      'About Classi',
       'Privacy Policy',
       'Contact Us',
     ],
@@ -66,7 +66,7 @@ export const FOOTER_CONTACT_INFO = {
   title: 'Contact Us',
   links: [
     { label: 'Divya Vaddavalli', value: 'dvad@ucdavis.edu' },
-    { label: 'Foram Shah', value: '@ucdavis.edu' },
+    { label: 'Foram Shah', value: 'fshah@ucdavis.edu' },
   ],
 };
 
