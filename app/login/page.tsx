@@ -1,5 +1,6 @@
 'use client'
 import React, { useState } from 'react'
+import Button from "react"
 import { register } from "module";
 import { BrowserRouter, Link } from "react-router-dom"
 import { useDispatch } from "react-redux";
@@ -10,7 +11,6 @@ import TextInput from "@/components/TextInput"
 const Login = () => {
     const {
         register,
-        handleSubmit,
         formState: { errors },
     } = useForm(
         {
@@ -18,9 +18,15 @@ const Login = () => {
         }
     )
 
+    const onSubmit = async (data) => {
+
+    }
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        //e.preventDefault()
+    }
+
     const [errMsg, setErrMsg] = useState("");
     const [isSubmitting, setIsSubmitting] = useState("false");
-    //const dispatch = useDispatch()
 
     return (
         <BrowserRouter>
@@ -33,7 +39,8 @@ const Login = () => {
                             Log in to your account
                         </p>
                         <span className='text-sm mt-2 text-ascent-2'>Welcome Back</span>
-                        <form className='py-8 flex flex-col gap-5'>
+                        <form className='py-8 flex flex-col gap-5'
+                            onSubmit={handleSubmit(onSubmit)}>
                             <TextInput
                                 name='email'
                                 placeholder='email@ucdavis.edu'
@@ -77,14 +84,25 @@ const Login = () => {
                                 )
                             }
 
+                            <form onSubmit={handleSubmit}>
+                                <input onChange={(e) => setName(e.target.value)}></input>
+                                <button
+                                    className="inline-flex font-bold rounded-full bg-[#B9C9DF] overflow-hidden px-8 py-3 text-sm justify-center"
 
+                                >Submit</button>
+                            </form>
 
-
+                            <p className='text-ascent-2 text-sm text-center'>
+                                Don't have an account?
+                                <Link
+                                    to='/register'
+                                    className='text-[#7699C8] font-semibold ml-2 cursor-pointer'
+                                >
+                                    Create Account
+                                </Link>
+                            </p>
 
                         </form>
-                    </div>
-                    <div>
-
                     </div>
                 </div>
             </div >
