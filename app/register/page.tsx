@@ -2,11 +2,11 @@
 import React, { useState } from 'react'
 import Button from "react"
 import { register } from "module";
-import { BrowserRouter, Link } from "react-router-dom"
+import { BrowserRouter } from "react-router-dom"
 import { useDispatch } from "react-redux";
 import { useForm } from "react-hook-form"
 import TextInput from "@/components/TextInput"
-
+import Link from 'next/link';
 
 const Register = () => {
     const {
@@ -41,6 +41,19 @@ const Register = () => {
                         <span className='text-sm mt-2 text-ascent-2'>Enter your email address and Password Below:</span>
                         <form className='py-8 flex flex-col gap-5'
                             onSubmit={handleSubmit(onSubmit)}>
+
+                            <TextInput
+                                name='name'
+                                placeholder='John Doe'
+                                label='Full Name'
+                                type='name'
+                                register={register("name", {
+                                    required: "Name is required"
+                                })}
+                                styles='w-full rounded-full'
+                                labelStyle='ml-2'
+                                error={errors.name ? errors.name.message : ""}
+                            />
                             <TextInput
                                 name='email'
                                 placeholder='email@ucdavis.edu'
@@ -68,7 +81,7 @@ const Register = () => {
                             />
 
                             <Link
-                                to="/reset-password"
+                                href="/reset-password"
                                 className="text-sm text-right text-blue font-semibold">
                                 Forgot Password? </Link>
 
@@ -92,7 +105,7 @@ const Register = () => {
                                 >Submit</button>
                             </form>
 
-                            <p className='text-ascent-2 text-sm text-center'>
+                            {/* <p className='text-ascent-2 text-sm text-center'>
                                 Don't have an account?
                                 <Link
                                     to='/register'
@@ -100,7 +113,7 @@ const Register = () => {
                                 >
                                     Create Account
                                 </Link>
-                            </p>
+                            </p> */}
 
                         </form>
                     </div>

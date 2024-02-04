@@ -2,10 +2,11 @@
 import React, { useState } from 'react'
 import Button from "react"
 import { register } from "module";
-import { BrowserRouter, Link } from "react-router-dom"
+import { BrowserRouter } from "react-router-dom"
 import { useDispatch } from "react-redux";
 import { useForm } from "react-hook-form"
 import TextInput from "@/components/TextInput"
+import Link from 'next/link'
 
 
 const Login = () => {
@@ -68,7 +69,7 @@ const Login = () => {
                             />
 
                             <Link
-                                to="/reset-password"
+                                href="/reset-password"
                                 className="text-sm text-right text-blue font-semibold">
                                 Forgot Password? </Link>
 
@@ -95,7 +96,7 @@ const Login = () => {
                             <p className='text-ascent-2 text-sm text-center'>
                                 Don't have an account?
                                 <Link
-                                    to='/register'
+                                    href='/register'
                                     className='text-[#7699C8] font-semibold ml-2 cursor-pointer'
                                 >
                                     Create Account
