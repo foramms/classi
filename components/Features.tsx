@@ -8,7 +8,7 @@ const Features = () => {
       <div className = "max-container padding-on relative w-full flex justify-end">
         <div className = "flex flex-1 lg:min-h-[900px]">
           <Image
-            src="/phone.png"
+            src="/newphone.png"
             alt="phone"
             width={440}
             height={1000}
