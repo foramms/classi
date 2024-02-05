@@ -1,5 +1,6 @@
-import { MongoDBCollectionNamespace } from "mongodb"
+import { connectMongoDB } from "@/lib/mongodb";
 import { NextResponse } from "next/server";
+import User from "@/models/user";
 
 export async function POST(req) {
     try {
@@ -9,6 +10,6 @@ export async function POST(req) {
         console.log("user: ", user)
         return NextResponse.json({ user });
     } catch (err) {
-        console.log(error);
+        console.log(err);
     }
 }
