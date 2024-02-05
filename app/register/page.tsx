@@ -63,7 +63,7 @@ export default function RegisterForm() {
     return (
         <div className="w-full h-[100vh] flex items-center justify-center p-6">
             <div className="w-full shadow-lg p-1 rounded-lg border-t-4 border-[#7699C8]">
-                <h1 className="text-xl font-bold my-4">Register</h1>
+                <h1 className="text-xl font-bold my-4 text-center">Register</h1>
 
                 <form onSubmit={handleSubmit} className="flex flex-col gap-3">
                     <input
@@ -81,7 +81,7 @@ export default function RegisterForm() {
                         type="password"
                         placeholder="Password"
                     />
-                    <button className="bg-[#7699C8] text-white font-bold cursor-pointer px-6 py-2">
+                    <button className="bg-[#7699C8] text-white font-bold cursor-pointer px-14 py-2 rounded-md mx-auto mt-2">
                         Register
                     </button>
 
