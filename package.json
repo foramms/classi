@@ -12,6 +12,7 @@
     "@reduxjs/toolkit": "^2.0.1",
     "axios": "^1.6.5",
     "bcrypt": "^5.1.1",
+    "bcrypt-ts": "^5.0.1",
     "bcryptjs": "^2.4.3",
     "dependencies": "^0.0.1",
     "dotenv": "^16.3.1",
