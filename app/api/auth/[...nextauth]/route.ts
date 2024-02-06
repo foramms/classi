@@ -3,7 +3,7 @@ import User from "@/models/user";
 import NextAuth from "next-auth/next";
 import type { NextAuthOptions } from 'next-auth'
 import CredentialsProvider from "next-auth/providers/credentials";
-import bcrypt from "bcrypt-ts";
+import { compare } from "bcrypt-ts";
 
 export const authOptions: NextAuthOptions = {
     providers: [
@@ -22,7 +22,9 @@ export const authOptions: NextAuthOptions = {
                         return null;
                     }
 
-                    const passwordsMatch = await bcrypt.compare(password, user.password);
+                    //console.log(user);
+
+                    const passwordsMatch = await compare(password, user.password);
 
                     if (!passwordsMatch) {
                         return null;
