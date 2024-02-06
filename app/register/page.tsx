@@ -2,10 +2,10 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
-export default function LoginForm() {
+export default function RegisterForm() {
+    const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
@@ -15,30 +15,62 @@ export default function LoginForm() {
     const handleSubmit = async (e: any) => {
         e.preventDefault();
 
+        if (!name || !email || !password) {
+            setError("All fields are necessary.");
+            return;
+        }
+
         try {
-            const res = await signIn("credentials", {
-                email,
-                password,
-                redirect: false,
+            const resUserExists = await fetch("api/userExists", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ email }),
             });
 
-            if (res?.error) {
-                setError("Invalid Credentials");
+            const { user } = await resUserExists.json();
+
+            if (user) {
+                setError("User already exists.");
                 return;
             }
 
-            router.replace("dashboard");
+            const res = await fetch("api/register", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    name,
+                    email,
+                    password,
+                }),
+            });
+
+            if (res.ok) {
+                const form = e.target;
+                form.reset();
+                router.push("/");
+            } else {
+                console.log("User registration failed.");
+            }
         } catch (error) {
-            console.log(error);
+            console.log("Error during registration: ", error);
         }
     };
 
     return (
         <div className="w-full h-[100vh] flex items-center justify-center p-6">
-            <div className="w-full shadow-lg p-1 rounded-lg border-t-4 border-[#7699CB]">
-                <h1 className="text-xl font-bold my-4 text-center">Login</h1>
+            <div className="w-full shadow-lg p-1 rounded-lg border-t-4 border-[#7699C8]">
+                <h1 className="text-xl font-bold my-4 text-center">Register</h1>
 
                 <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+                    <input
+                        onChange={(e) => setName(e.target.value)}
+                        type="text"
+                        placeholder="Full Name"
+                    />
                     <input
                         onChange={(e) => setEmail(e.target.value)}
                         type="text"
@@ -49,24 +81,24 @@ export default function LoginForm() {
                         type="password"
                         placeholder="Password"
                     />
-                    <button className="bg-[#7699C8] text-white font-bold cursor-pointer px-14 py-2 rounded-md mx-auto mt-2 ">
-                        Login
+                    <button className="bg-[#7699C8] text-white font-bold cursor-pointer px-14 py-2 rounded-md mx-auto mt-2">
+                        Register
                     </button>
+
                     {error && (
                         <div className="bg-[#B9C9DF] text-white w-fit text-sm py-1 px-3 rounded-md mt-2">
                             {error}
                         </div>
                     )}
 
-                    <Link className="text-sm mt-3 text-right" href={"/register"}>
-                        Don't have an account? <span className="underline">Register</span>
+                    <Link className="text- mt-3 text-right" href={"/login"}>
+                        Already have an account? <span className="underline">Login</span>
                     </Link>
                 </form>
             </div>
         </div>
     );
 }
-
 
 // 'use client'
 // import React, { useState } from 'react'
@@ -76,10 +108,9 @@ export default function LoginForm() {
 // import { useDispatch } from "react-redux";
 // import { useForm } from "react-hook-form"
 // import TextInput from "@/components/TextInput"
-// import Link from 'next/link'
+// import Link from 'next/link';
 
-
-// const Login = () => {
+// const Register = () => {
 //     const {
 //         register,
 //         formState: { errors },
@@ -107,11 +138,24 @@ export default function LoginForm() {
 //                         <div className='w-full flex gap-2 items-center mb-6'>
 //                         </div>
 //                         <p className='text-ascent-1 text-base font-semibold'>
-//                             Log in to your account
+//                             Create an Account
 //                         </p>
-//                         <span className='text-sm mt-2 text-ascent-2'>Welcome Back</span>
+//                         <span className='text-sm mt-2 text-ascent-2'>Enter your email address and Password Below:</span>
 //                         <form className='py-8 flex flex-col gap-5'
 //                             onSubmit={handleSubmit(onSubmit)}>
+
+//                             <TextInput
+//                                 name='name'
+//                                 placeholder='John Doe'
+//                                 label='Full Name'
+//                                 type='name'
+//                                 register={register("name", {
+//                                     required: "Name is required"
+//                                 })}
+//                                 styles='w-full rounded-full'
+//                                 labelStyle='ml-2'
+//                                 error={errors.name ? errors.name.message : ""}
+//                             />
 //                             <TextInput
 //                                 name='email'
 //                                 placeholder='email@ucdavis.edu'
@@ -163,15 +207,15 @@ export default function LoginForm() {
 //                                 >Submit</button>
 //                             </form>
 
-//                             <p className='text-ascent-2 text-sm text-center'>
+//                             {/* <p className='text-ascent-2 text-sm text-center'>
 //                                 Don't have an account?
 //                                 <Link
-//                                     href='/register'
+//                                     to='/register'
 //                                     className='text-[#7699C8] font-semibold ml-2 cursor-pointer'
 //                                 >
 //                                     Create Account
 //                                 </Link>
-//                             </p>
+//                             </p> */}
 
 //                         </form>
 //                     </div>
@@ -182,4 +226,4 @@ export default function LoginForm() {
 
 // };
 
-// export default Login;
+// export default Register;

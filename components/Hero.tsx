@@ -49,12 +49,12 @@ const Hero = () => {
               icon="/herowrite.svg"
               variant="btn_green"
           />
-          <Button
+          {/* <Button
               type="button"
               title="How it Works"
               icon="/heroplay.svg"
               variant="btn_white_text"
-          />
+          /> */}
         </div>
       </div>
       
