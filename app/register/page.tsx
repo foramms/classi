@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
+import Typewriter2 from './Typewriter2';
 
 export default function RegisterForm() {
     const [name, setName] = useState("");
@@ -61,8 +63,18 @@ export default function RegisterForm() {
     };
 
     return (
-        <div className="w-full h-[100vh] flex items-center justify-center p-6">
-            <div className="w-full shadow-lg p-1 rounded-lg border-t-4 border-[#7699C8]">
+        <div className="w-full h-[100vh] flex flex-col items-center justify-center p-6">
+             <div className="flex justify-center">
+            <Image
+            src="/Icon-notepad.svg"
+            alt="camp"
+            width={75}
+            height={75}
+            className="w-75 lg:w-70"
+            />
+            </div>
+             <Typewriter2 text="Welcome to CLASSI" />
+            <div className="w-3/4 shadow-lg p-1 rounded-lg border-t-4 border-[#7699C8]">
                 <h1 className="text-xl font-bold my-4 text-center">Register</h1>
 
                 <form onSubmit={handleSubmit} className="flex flex-col gap-3">
@@ -91,7 +103,7 @@ export default function RegisterForm() {
                         </div>
                     )}
 
-                    <Link className="text- mt-3 text-right" href={"/login"}>
+                    <Link className="text-sm mt-3 text-right" href={"/login"}>
                         Already have an account? <span className="underline">Login</span>
                     </Link>
                 </form>

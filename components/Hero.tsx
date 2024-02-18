@@ -19,7 +19,7 @@ const Hero = () => {
           CLASSI
         </h1>
         <p className="regular-16 mt-6 text-gray-30 xl:max-w-[520px]">
-          Welcome to a collaboritve website to gain information about classes to guide your educational journey.
+          Welcome to a collaborative website to gain information about classes to guide your educational journey.
           For students by students!
         </p>
 
@@ -49,12 +49,6 @@ const Hero = () => {
               icon="/herowrite.svg"
               variant="btn_green"
           />
-          {/* <Button
-              type="button"
-              title="How it Works"
-              icon="/heroplay.svg"
-              variant="btn_white_text"
-          /> */}
         </div>
       </div>
       

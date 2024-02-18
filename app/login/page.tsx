@@ -1,9 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import Image from "next/image"
+import Typewriter from './Typewriter';
 
 export default function LoginForm() {
     const [email, setEmail] = useState("");
@@ -34,8 +36,20 @@ export default function LoginForm() {
     };
 
     return (
-        <div className="w-full h-[100vh] flex items-center justify-center p-6">
-            <div className="w-full shadow-lg p-1 rounded-lg border-t-4 border-[#7699CB]">
+        <div className="w-full h-[100vh] flex flex-col items-center justify-center p-6">
+             <div className="flex justify-center">
+            <Image
+            src="/Icon-notepad.svg"
+            alt="camp"
+            width={75}
+            height={75}
+            className="w-75 lg:w-70"
+            />
+            </div>
+             <Typewriter text="Welcome Back" />
+            <h1 className="relative w-[max-content] font-mono before:absolute before:inset-0 before:animate-typewriter before:bg-white">Hello World</h1>
+
+            <div className="w-3/4 shadow-lg p-1 rounded-lg border-t-4 border-[#7699CB]">
                 <h1 className="text-xl font-bold my-4 text-center">Login</h1>
 
                 <form onSubmit={handleSubmit} className="flex flex-col gap-3">
