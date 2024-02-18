@@ -13,7 +13,7 @@ const variants = {
   secondary: 'bg-gray-500 text-white hover:bg-gray-600',
 };
 
-const Button = ({ type, title, icon, variant, backgroundcolor }: ButtonProps) => {
+const Button = ({ type, title, icon, variant, backgroundcolor}: ButtonProps) => {
   return (
     <button
       className={'flexCenter gap-3 rounded-full border ${variant}'}

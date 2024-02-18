@@ -69,9 +69,9 @@ const Camp = () => {
       <div className="relative flex flex-1 items-start flexEnd mt-10 px-6 lg:-mt-60 lg:mr-6">
         <div className = "bg-blue-200 p-8 lg:max-w-[500px] xl:max-w-[734] xl:rounded-5xl xl:px-16 xl:py-10 overflow-hidden rounded-3xl">
           <h2 className = "regular-24 md:regular-32 2xl:regular-64 capitalize text-white ">
-            <strong>Be Eqipped</strong> for Your Future 
+            <strong>Be Equipped</strong> for Your Future 
           </h2>
-          <p className="regular-14 xl:regular-16 mt-5 text-white"> With Class Review Corner, you can connect in real time with other students to broaden your understanding. The detailed responses will help better prepare you for future classes toward your education!  </p>
+          <p className="regular-14 xl:regular-16 mt-5 text-white"> With CLASSI, you can connect in real time with other students to broaden your understanding. The detailed responses will help better prepare you for future classes toward your education!  </p>
           <Image
             src= "/quote.svg"
             alt="camp-2"
