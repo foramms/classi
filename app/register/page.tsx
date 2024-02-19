@@ -63,7 +63,8 @@ export default function RegisterForm() {
     };
 
     return (
-        <div className="w-full h-[100vh] flex flex-col items-center justify-center p-6">
+        // <div className="w-full h-[100vh] flex flex-col items-center justify-center p-6">
+        <div className="w-full h-[80vh] flex flex-col items-center justify-start p-6 mb-16">
              <div className="flex justify-center">
             <Image
             src="/Icon-notepad.svg"
@@ -73,7 +74,8 @@ export default function RegisterForm() {
             className="w-75 lg:w-70"
             />
             </div>
-             <Typewriter2 text="Welcome to CLASSI" />
+            <Typewriter2 textWithSize={{ text: "Welcome to CLASSI", size: "52" }} />
+            <Typewriter2 textWithSize={{ text: "Lets get you started on your class planning journey.", size: "42" }} />
             <div className="w-3/4 shadow-lg p-1 rounded-lg border-t-4 border-[#7699C8]">
                 <h1 className="text-xl font-bold my-4 text-center">Register</h1>
 

@@ -1,23 +1,23 @@
 import { useState, useEffect } from 'react';
 
-const Typewriter = ({ text }) => {
+const Typewriter = ({ textWithSize }) => {
   const [displayedText, setDisplayedText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     let typingInterval;
-    if (currentIndex < text.length) {
+    if (currentIndex < textWithSize.text.length) {
       typingInterval = setTimeout(() => {
-        setDisplayedText((prevText) => prevText + text[currentIndex]);
+        setDisplayedText((prevText) => prevText + textWithSize.text[currentIndex]);
         setCurrentIndex((prevIndex) => prevIndex + 1);
       }, 100);
     }
 
     return () => clearTimeout(typingInterval);
-  }, [currentIndex, text]);
+  }, [currentIndex, textWithSize]);
 
   return (
-    <h1 className="font-roboto bold-52 lg:bold-76 text-blue-90" >
+    <h1 className={`font-roboto bold-${textWithSize.size} lg:bold-${parseInt(textWithSize.size) + 24} text-blue-90`}>
       {displayedText}
     </h1>
   );
