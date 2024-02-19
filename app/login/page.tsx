@@ -36,8 +36,9 @@ export default function LoginForm() {
     };
 
     return (
-        <div className="w-full h-[100vh] flex flex-col items-center justify-center p-6">
-             <div className="flex justify-center">
+        // <div className="w-full h-[100vh] flex flex-col items-center justify-center p-6">
+        <div className="w-full h-[80vh] flex flex-col items-center justify-start p-6 mb-16">
+            <div className="flex justify-center">
             <Image
             src="/Icon-notepad.svg"
             alt="camp"
@@ -47,7 +48,6 @@ export default function LoginForm() {
             />
             </div>
              <Typewriter text="Welcome Back" />
-            <h1 className="relative w-[max-content] font-mono before:absolute before:inset-0 before:animate-typewriter before:bg-white">Hello World</h1>
 
             <div className="w-3/4 shadow-lg p-1 rounded-lg border-t-4 border-[#7699CB]">
                 <h1 className="text-xl font-bold my-4 text-center">Login</h1>

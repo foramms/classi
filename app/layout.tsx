@@ -6,7 +6,7 @@ import Footer from '@/components/Footer'
 
 
 export const metadata: Metadata = {
-  title: 'Class Review',
+  title: 'Classi',
   description: 'Class Review for Students',
 }
 
