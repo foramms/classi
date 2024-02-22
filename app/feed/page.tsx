@@ -1,7 +1,32 @@
+'use client'
 import React from "react";
 import Image from "next/image"
+import { useSession } from "next-auth/react";
+
+async function getData() {
+  const { data: session } = useSession();
+  const name = session?.user?.name
+  try {
+    const res = await fetch("api/getPosts", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: name,
+      }),
+    });
+    console.log(res)
+    return res
+  } catch (error) {
+    console.log("Error retreiving posts: ", error);
+  }
+
+
+}
 
 const FeedPage = () => {
+  const posts = getData()
   return (
     <div className="flex justify-center items-center">
       <div className="max-w-screen-lg w-full">
@@ -18,11 +43,11 @@ const FeedPage = () => {
               </div>
             </div>
             <header className="space-y-4 mt-16">
-            <h1 className="font-roboto bold-52 text-center lg:bold-76 text-blue-90">Welcome to the Feed</h1>
+              <h1 className="font-roboto bold-52 text-center lg:bold-76 text-blue-90">Welcome to the Feed</h1>
               <div className="flex items-center justify-between">
                 <h2 className="font-semibold text-slate-900">College: UC Davis</h2>
-                <h2 className="font-semibold text-slate-900">Instructor: Professor Smith</h2>   
-                <h2 className="font-semibold text-slate-900">Syllabus: Yes</h2>     
+                <h2 className="font-semibold text-slate-900">Instructor: Professor Smith</h2>
+                <h2 className="font-semibold text-slate-900">Syllabus: Yes</h2>
                 <a href="/feed" className="hover:blue-90 group flex items-center rounded-md bg-blue-90 text-white text-sm font-medium pl-2 pr-3 py-2 shadow-sm">
                   <svg width="20" height="20" fill="currentColor" className="mr-2" aria-hidden="true">
                     <path d="M10 5a1 1 0 0 1 1 1v3h3a1 1 0 1 1 0 2h-3v3a1 1 0 1 1-2 0v-3H6a1 1 0 1 1 0-2h3V6a1 1 0 0 1 1-1Z" />
@@ -39,7 +64,7 @@ const FeedPage = () => {
             </header>
             <ul className="bg-slate-50 p-4 sm:px-8 sm:pt-6 sm:pb-8 lg:p-4 xl:px-8 xl:pt-6 xl:pb-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-4 text-sm leading-6 mt-8 items-center justify-center">
               <li className="flex">
-                <a href="/feed" className="hover:border-blue-500 hover:border-solid hover:bg-white hover:text-blue-500 group w-full flex flex-col items-center justify-center rounded-md border-2 border-dashed border-slate-300 text-sm leading-6 text-slate-900 font-medium py-3">
+                <a href="/post" className="hover:border-blue-500 hover:border-solid hover:bg-white hover:text-blue-500 group w-full flex flex-col items-center justify-center rounded-md border-2 border-dashed border-slate-300 text-sm leading-6 text-slate-900 font-medium py-3">
                   <svg className="group-hover:text-blue-500 mb-1 text-slate-400" width="20" height="20" fill="currentColor" aria-hidden="true">
                     <path d="M10 5a1 1 0 0 1 1 1v3h3a1 1 0 1 1 0 2h-3v3a1 1 0 1 1-2 0v-3H6a1 1 0 1 1 0-2h3V6a1 1 0 0 1 1-1Z" />
                   </svg>
@@ -47,6 +72,9 @@ const FeedPage = () => {
                 </a>
               </li>
             </ul>
+          </div>
+          <div>
+
           </div>
         </section>
       </div>
