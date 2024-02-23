@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
+import Image from "next/image";
 
 export default function Post() {
     const [review, setReview] = useState("");
@@ -49,7 +50,16 @@ export default function Post() {
     return (
         <div className="w-full h-[100vh] flex items-center justify-center p-6">
             <div className="w-full shadow-lg p-1 rounded-lg border-t-4 border-[#7699C8]">
-                <h1 className="text-xl font-bold my-4">Review professors and classes</h1>
+            <div className="flex justify-center">
+                <Image
+                    src="/Icon-notepad.svg"
+                    alt="camp"
+                    width={75}
+                    height={75}
+                    className="w-75 lg:w-70"
+                />
+            </div>
+                <h1 className="text-xl font-bold my-4 text-center justify-center">Review Professors and Classes</h1>
 
                 <form onSubmit={handleSubmit} className="flex flex-col gap-3">
                     <input
