@@ -5,9 +5,13 @@ import Post from "@/models/post";
 export async function POST(req) {
     try {
         const { name } = await req.json();
+        console.log(name)
         await connectMongoDB();
-        posts = await Post.find({ name: name })
-        return NextResponse.json(JSON.stringify(posts), { status: 201 });
+        const ps = await Post.find({})
+        // console.log(ps[0]["post"])
+        console.log(ps)
+        console.log(ps.post)
+        return NextResponse.json(JSON.stringify(ps), { status: 201 });
 
     } catch (error) {
         console.log(error)
@@ -17,3 +21,4 @@ export async function POST(req) {
         );
     }
 }
+

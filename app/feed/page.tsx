@@ -1,32 +1,47 @@
 'use client'
-import React from "react";
+// import React from "react";
 import Image from "next/image"
 import { useSession } from "next-auth/react";
-
-async function getData() {
-  const { data: session } = useSession();
-  const name = session?.user?.name
-  try {
-    const res = await fetch("api/getPosts", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name: name,
-      }),
-    });
-    console.log(res)
-    return res
-  } catch (error) {
-    console.log("Error retreiving posts: ", error);
-  }
+import React, { useState, useEffect } from "react";
 
 
-}
 
 const FeedPage = () => {
-  const posts = getData()
+  const [posts, setPosts] = useState([["Loading...", "Hold on"]]);
+  const { data: session } = useSession();
+  const name = session?.user?.name
+  // /console.log(name)
+  useEffect(() => {
+    console.log(name)
+    getData(name)
+  }, [name]);
+
+  async function getData(name: any) {
+
+    try {
+      const res = await fetch("api/getPosts", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: name,
+        }),
+      });
+      const ans = JSON.parse(await res.json())
+      console.log(ans.length)
+      const ps = []
+      for (let i = 0; i < ans.length; i++) {
+        ps.push([ans[i].name, ans[i].post])
+        console.log([ans[i].name, ans[i].post])
+      }
+      setPosts(ps)
+      console.log(ps)
+    } catch (error) {
+      console.log("Error retreiving posts: ", error);
+    }
+  }
+
   return (
     <div className="flex justify-center items-center">
       <div className="max-w-screen-lg w-full">
@@ -73,8 +88,12 @@ const FeedPage = () => {
               </li>
             </ul>
           </div>
-          <div>
-
+          <div className='flex flex-col justify-center items-center group relative p-4 space-y-4'>
+            {posts?.map((post) => (
+              <div className='w-full bg-slate-200 rounded-lg text-center'>
+                <span className="inline-block font-bold">
+                  @{post[0]}: </span> {post[1]}</div>
+            ))}
           </div>
         </section>
       </div>

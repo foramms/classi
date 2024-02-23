@@ -1,12 +1,17 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import { useRouter, redirect } from "next/navigation";
 import { signOut } from "next-auth/react";
 import { useSession } from "next-auth/react";
 
 export default function UserInfo() {
     const { data: session } = useSession();
     const router = useRouter();
+
+    const handleSubmit = async () => {
+        await signOut({ callbackUrl: "http://localhost:3000/" })
+        console.log("out")
+    };
 
     return (
         <div className="grid place-items-center h-screen">
@@ -21,7 +26,8 @@ export default function UserInfo() {
                     Create a Post
                 </button>
                 <button
-                    onClick={() => signOut()}
+                    onClick={handleSubmit}
+
                     className="bg-[#7699C8] text-white font-bold px-6 py-2 mt-3"
                 >
                     Log Out
