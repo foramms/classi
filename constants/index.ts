@@ -10,7 +10,6 @@ export const NAV_LINKS = [
   // { href: '/', key: 'contact_us', label: 'Contact Us' },
 ];
 
-// CAMP SECTION
 export const PEOPLE_URL = [
   '/person-1.png',
   '/person-2.png',

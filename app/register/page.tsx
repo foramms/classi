@@ -84,16 +84,19 @@ export default function RegisterForm() {
                         onChange={(e) => setName(e.target.value)}
                         type="text"
                         placeholder="Full Name"
+                        className="p-8 rounded-md"
                     />
                     <input
                         onChange={(e) => setEmail(e.target.value)}
                         type="text"
                         placeholder="Email"
+                        className="p-8 rounded-md"
                     />
                     <input
                         onChange={(e) => setPassword(e.target.value)}
                         type="password"
                         placeholder="Password"
+                        className="p-8 rounded-md"
                     />
                     <button className="bg-[#7699C8] text-white font-bold cursor-pointer px-14 py-2 rounded-md mx-auto mt-2">
                         Register
@@ -105,7 +108,7 @@ export default function RegisterForm() {
                         </div>
                     )}
 
-                    <Link className="text-sm mt-3 text-right" href={"/login"}>
+                    <Link className="text-justify text-sm mt-3 mx-auto" href={"/login"}>
                         Already have an account? <span className="underline">Login</span>
                     </Link>
                 </form>

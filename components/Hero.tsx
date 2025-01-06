@@ -44,13 +44,12 @@ const Hero = () => {
         </div>
 
         <div className="flex flex-col w-full gap-2">
-          <Link href="/feed">
+          <Link href="/login">
           <Button
               type="button"
               title="Write a Review"
               icon="/herowrite.svg"
-              variant="btn_green"
-          />
+              variant="btn_green" backgroundcolor={''}          />
           </Link>
         </div>
       </div>
