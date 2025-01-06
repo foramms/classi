@@ -57,22 +57,26 @@ export default function LoginForm() {
                         onChange={(e) => setEmail(e.target.value)}
                         type="text"
                         placeholder="Email"
+                        className="p-8 rounded-md"
                     />
                     <input
                         onChange={(e) => setPassword(e.target.value)}
                         type="password"
                         placeholder="Password"
+                        className="p-8 rounded-md"
                     />
                     <button className="bg-[#7699C8] text-white font-bold cursor-pointer px-14 py-2 rounded-md mx-auto mt-2 ">
                         Login
                     </button>
                     {error && (
-                        <div className="bg-[#B9C9DF] text-white w-fit text-sm py-1 px-3 rounded-md mt-2">
+                        <div className="flex justify-center items-center w-full">
+                        <div className="bg-[#B9C9DF] text-justify text-white w-fit text-sm py-1 px-3 rounded-md mt-2">
                             {error}
+                        </div>
                         </div>
                     )}
 
-                    <Link className="text-sm mt-3 text-right" href={"/register"}>
+                    <Link className="text-justify text-sm mt-3 mx-auto" href={"/register"}>
                         Don't have an account? <span className="underline">Register</span>
                     </Link>
                 </form>
